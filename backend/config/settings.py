@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'api',
+    'workout_quiz',   # Workout quiz sections (goal, schedule, equipment, ...)
 ]
 
 MIDDLEWARE = [
