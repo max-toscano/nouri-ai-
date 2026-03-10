@@ -1,0 +1,95 @@
+/* Custom styles to complement Bootstrap */
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 60vh;
+    padding: 100px 0;
+}
+
+/* Section Titles */
+.section-title {
+    color: #667eea;
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* Skill Cards */
+.skill-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2) !important;
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: #667eea;
+}
+
+/* Project Cards */
+.project-card {
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Custom Primary Color Override */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #5a6fd6 0%, #6a4190 100%);
+    transform: scale(1.02);
+}
+
+.btn-outline-primary {
+    color: #667eea;
+    border-color: #667eea;
+}
+
+.btn-outline-primary:hover {
+    background: #667eea;
+    border-color: #667eea;
+}
+
+.text-primary {
+    color: #667eea !important;
+}
+
+/* Navbar customization */
+.navbar {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #333 0%, #1a1a2e 100%) !important;
+}

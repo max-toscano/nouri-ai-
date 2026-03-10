@@ -1,0 +1,16 @@
+#hero{
+    border: 3px solid blue;
+    height: auto;
+}
+
+#card1{
+    border:3px solid black 
+}
+.box{
+    width:5px;
+    height:3px;
+    padding:20px 10px;
+    background-color:aqua;
+    border:2px solid black;
+    margin:20px;
+}
