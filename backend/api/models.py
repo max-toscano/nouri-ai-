@@ -57,6 +57,29 @@ class BodyStats(models.Model):
     def __str__(self):
         return f"BodyStats @ {self.updated_at:%Y-%m-%d %H:%M}"
 
+    def save(self, *args, **kwargs):
+        """Auto-compute BMR, TDEE, and BMI from raw user values on every save."""
+        from .services.calculator import (
+            calc_bmr, calc_tdee, calc_bmi, get_weight_kg, get_height_cm,
+        )
+
+        stats = {
+            "weight": self.weight,
+            "weight_unit": self.weight_unit,
+            "height_feet": self.height_feet,
+            "height_inches": self.height_inches,
+            "height_cm": self.height_cm,
+            "height_unit": self.height_unit,
+        }
+        weight_kg = get_weight_kg(stats)
+        height_cm = get_height_cm(stats)
+
+        self.current_bmi = calc_bmi(weight_kg, height_cm)
+        self.bmr = calc_bmr(weight_kg, height_cm, self.age, self.sex)
+        self.tdee = calc_tdee(self.bmr, self.activity_level)
+
+        super().save(*args, **kwargs)
+
 
 class Meal(models.Model):
     MEAL_TYPES = [

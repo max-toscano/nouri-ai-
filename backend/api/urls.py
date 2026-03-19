@@ -12,6 +12,10 @@ urlpatterns = [
     path("hydration/today/",                  views.hydration_today,  name="hydration-today"),
     path("hydration/",                        views.hydration_create, name="hydration-create"),
 
+    # ── AI Workout Quiz ──
+    path("workout/quiz/",                       views.workout_quiz_questions, name="workout-quiz"),
+    path("workout/generate/",                   views.workout_quiz_submit,    name="workout-generate"),
+
     # ── Date-parameterized endpoints ──
     path("daily-summary/",                    views.daily_summary,    name="daily-summary"),
     path("meals/by-date/",                    views.meals_by_date,    name="meals-by-date"),

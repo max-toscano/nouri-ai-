@@ -68,6 +68,9 @@ USDA_API_KEY            = os.getenv('USDA_API_KEY', 'DEMO_KEY')
 FATSECRET_CLIENT_ID     = os.getenv('FATSECRET_CLIENT_ID', '')
 FATSECRET_CLIENT_SECRET = os.getenv('FATSECRET_CLIENT_SECRET', '')
 
+# OpenAI
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '')
+
 # ── DRF ───────────────────────────────────────────────────────────────────────
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': ['rest_framework.renderers.JSONRenderer'],
